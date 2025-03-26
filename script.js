@@ -3,7 +3,7 @@ function calculatePrices() {
     let quantity = parseFloat(document.getElementById('quantity').value) || 1;
     
     let taxedPrice = Math.round(costPrice * 1.1 * 100) / 100; // Adding 10% tax and rounding to 2 decimal places
-    let costPerItem = Math.round((costPrice / quantity) * 100) / 100;
+    let costPerItem = Math.round((taxedPrice / quantity) * 100) / 100; // Now based on taxed price
     let retailPrice = Math.ceil((costPerItem * 1.8) * 10) / 10; // 80% markup, rounded up to nearest 0.10
     let profitPerItem = Math.round((retailPrice - costPerItem) * 100) / 100;
     
