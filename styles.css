@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif; /* Notion's font */
     background: #ffffff;
     color: #333;
     display: flex;
@@ -10,39 +12,56 @@ body {
 }
 
 .container {
-    background: #f8f9fa;
-    padding: 20px;
+    background: #fff;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 320px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center; /* Center text inside */
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .input-group, .output-group {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 label {
-    flex: 1;
     font-size: 14px;
-    margin-right: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
 input {
-    flex: 1;
-    padding: 8px;
+    width: 90%;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    text-align: right;
+    text-align: center; /* Center input text */
+    font-size: 14px;
 }
 
+/* Remove up/down arrows from number input */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Style for read-only output fields */
 input[readonly] {
-    background: #e9ecef;
+    background: #f8f9fa;
     font-weight: bold;
+    color: #000;
 }
